@@ -1,1 +1,2 @@
 instalar paquete phpoffice: composer require phpoffice/phpword
+importante tener instalado composer
