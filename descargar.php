@@ -1,5 +1,6 @@
 <?php
 
+use PhpOffice\PhpWord\Style\Language;
 require "vendor/autoload.php";
 
 //Crear el nuevo documento
@@ -9,7 +10,8 @@ $phpWord = new \PhpOffice\PhpWord\PhpWord();
 // Agregar una seccion vacia al documento
 $seccion = $phpWord->addSection();
 
-//Añadir elemento de texto con fuente personalizada
+// Configuraciones por defecto del documento
+//Añadir fuente personalizada o deseada
 $fuente = 'Arial11';
 $phpWord->addFontStyle(
     $fuente, ['name' => 'Arial', 'size' => 11]
@@ -19,6 +21,11 @@ $phpWord->addFontStyle(
 $centrado = 'miEstilo';
 $phpWord->addParagraphStyle($centrado, ['align' => 'center']);
 
+// Añadir el lenguaje español al documento
+$phpWord->getSettings()->setThemeFontLang(new Language(Language::ES_ES));
+
+
+// Secciones del documento
 //Añadir los titulos del documento 
 $seccion->addText(
     "Acueducto y Alcantarillado de Popayán S.A. E. S.P",
@@ -86,6 +93,9 @@ $datosPersonas = array(
     array('Camilo Rodriguez 39', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
     array('Camilo Rodriguez 40', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______')
 );
+
+//Crear en formato columnas de word
+
 
 // Crear tabla
 /* $tabla = $seccion->addTable('estilo');
