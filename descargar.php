@@ -15,7 +15,12 @@ $seccion = $phpWord->addSection();
 //Añadir fuente personalizada o deseada
 $fuente = 'Arial11';
 $phpWord->addFontStyle(
-    $fuente, ['name' => 'Arial', 'size' => 11]
+    $fuente, 
+    [
+        'name' => 'Arial',
+        'size' => 11,
+        'bold' => true
+    ]
 );
 
 //Centrar texto
