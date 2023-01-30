@@ -1,11 +1,11 @@
 <?php
 
 use PhpOffice\PhpWord\Style\Language;
+use \PhpOffice\PhpWord\SimpleType\Jc;
 require "vendor/autoload.php";
 
 //Crear el nuevo documento
 $phpWord = new \PhpOffice\PhpWord\PhpWord();
-
 
 // Agregar una seccion vacia al documento
 $seccion = $phpWord->addSection();
@@ -34,8 +34,8 @@ $margenDocumento->setMarginTop(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(1.2
 $margenDocumento->setMarginBottom(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(1.27));
 
 // Documento de solo lectura
-$proteccionDocumento = $phpWord->getSettings()->getDocumentProtection();
-$proteccionDocumento->setEditing('readOnly');
+// $proteccionDocumento = $phpWord->getSettings()->getDocumentProtection();
+// $proteccionDocumento->setEditing('readOnly');
 
 
 
@@ -61,8 +61,25 @@ $seccion->addText(
 );
 
 // Crear estilo de tabla
-$estiloTabla = ['borderColor' => 'ffffff', 'borderSize' => 0, 'cellMargin' => 10];
+$estiloTabla = [
+    'borderColor' => 'ffffff',
+    'borderSize' => 0,
+    'position' => 'vertAnchor',
+    'cellMarginRight' => 90,
+    'width' => 2000 * 2000,
+    'unit' => 'pct',
+    'align' => 'center',
+    'layout' => 'autofit'
+];
 $phpWord->addTableStyle('estilo', $estiloTabla);
+
+$estiloCelda = [
+    'valign' => 'center'
+];
+
+$estiloParrafo = [
+    'alignment' => 'center'
+];
 
 // Agregar array con datos provisionales
 $datosPersonas = array(
@@ -109,20 +126,15 @@ $datosPersonas = array(
     array('Camilo Rodriguez 40', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______')
 );
 
-//Crear en formato columnas de word
-// $seccion->getStyle()->setBreakType('contiuous');
-// $seccion->getStyle()->setColsNum(3);
-
 // Obtener la informacion del arreglo
 foreach ($datosPersonas as $dato) {
     $tabla = $seccion->addTable('estilo');
     $tabla->addRow();
     foreach ($dato as $valor) {
         $celda = $tabla->addCell();
-        $celda->addText($valor);
+        $celda->addText($valor, $fuente, $estiloParrafo);
     }
 }
-
 
 // Crear tabla
 /* $tabla = $seccion->addTable('estilo');
