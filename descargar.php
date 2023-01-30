@@ -61,11 +61,12 @@ $seccion->addText(
 );
 
 // Crear estilo de tabla
-$estiloTabla = ['borderColor' => '000000', 'borderSize' => 1, 'cellMargin' => 10];
+$estiloTabla = ['borderColor' => 'ffffff', 'borderSize' => 0, 'cellMargin' => 10];
 $phpWord->addTableStyle('estilo', $estiloTabla);
 
 // Agregar array con datos provisionales
 $datosPersonas = array(
+    array('Nombre', 'Direccion', 'Codigo', 'U', 'ObsMtuo', 'No.Medi', 'Actual'),
     array('Camilo Rodriguez 1', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
     array('Camilo Rodriguez 2', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
     array('Camilo Rodriguez 3', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
@@ -109,6 +110,18 @@ $datosPersonas = array(
 );
 
 //Crear en formato columnas de word
+// $seccion->getStyle()->setBreakType('contiuous');
+// $seccion->getStyle()->setColsNum(3);
+
+// Obtener la informacion del arreglo
+foreach ($datosPersonas as $dato) {
+    $tabla = $seccion->addTable('estilo');
+    $tabla->addRow();
+    foreach ($dato as $valor) {
+        $celda = $tabla->addCell();
+        $celda->addText($valor);
+    }
+}
 
 
 // Crear tabla
