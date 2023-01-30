@@ -10,6 +10,8 @@ $phpWord = new \PhpOffice\PhpWord\PhpWord();
 // Agregar una seccion vacia al documento
 $seccion = $phpWord->addSection();
 
+
+
 // Configuraciones por defecto del documento
 //Añadir fuente personalizada o deseada
 $fuente = 'Arial11';
@@ -23,6 +25,18 @@ $phpWord->addParagraphStyle($centrado, ['align' => 'center']);
 
 // Añadir el lenguaje español al documento
 $phpWord->getSettings()->setThemeFontLang(new Language(Language::ES_ES));
+
+// Margenes por defecto en el documento
+$margenDocumento = $seccion->getStyle();
+$margenDocumento->setMarginLeft(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(1.27));
+$margenDocumento->setMarginRight(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(1.27));
+$margenDocumento->setMarginTop(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(1.27));
+$margenDocumento->setMarginBottom(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(1.27));
+
+// Documento de solo lectura
+$proteccionDocumento = $phpWord->getSettings()->getDocumentProtection();
+$proteccionDocumento->setEditing('readOnly');
+
 
 
 // Secciones del documento
