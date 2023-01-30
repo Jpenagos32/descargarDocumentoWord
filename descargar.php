@@ -23,6 +23,12 @@ $phpWord->addFontStyle(
     ]
 );
 
+$fuenteCodigo = [
+    'name' => 'Verdana',
+    'size' => 11,
+    'bold' => true
+];
+
 //Centrar texto
 $centrado = 'miEstilo';
 $phpWord->addParagraphStyle($centrado, ['align' => 'center']);
@@ -38,8 +44,8 @@ $margenDocumento->setMarginTop(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(1.2
 $margenDocumento->setMarginBottom(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(1.27));
 
 // Documento de solo lectura Comentar para desactivar el modo
-$proteccionDocumento = $phpWord->getSettings()->getDocumentProtection();
-$proteccionDocumento->setEditing('readOnly');
+// $proteccionDocumento = $phpWord->getSettings()->getDocumentProtection();
+// $proteccionDocumento->setEditing('readOnly');
 
 ###############################################################################################################################
 
@@ -70,7 +76,7 @@ $estiloTabla = [
     'borderColor' => 'ffffff',
     'borderSize' => 0,
     'position' => 'vertAnchor',
-    'cellMarginRight' => 90,
+    'cellMarginRight' => 10,
     'width' => 2000 * 2000,
     'unit' => 'pct',
     'align' => 'center',
@@ -162,13 +168,16 @@ $celda->addText('No.Medi', $fuente, $estiloParrafo);
 $celda =$tabla->addCell();
 $celda->addText('Actual', $fuente, $estiloParrafo);
 
+
+
 // Obtener la informacion del arreglo para crear la tabla
 foreach ($datosPersonas as $dato) {
     $tabla = $seccion->addTable('estilo');
     $tabla->addRow(854, $estiloFila);
     foreach ($dato as $valor) {
+        $tipoDeLetra = strpos($valor, '/') ? $fuenteCodigo : $fuente;
         $celda = $tabla->addCell();
-        $celda->addText($valor, $fuente, $estiloParrafo);
+        $celda->addText($valor, $tipoDeLetra, $estiloParrafo);
     }
 }
 
