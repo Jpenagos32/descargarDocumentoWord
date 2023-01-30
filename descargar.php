@@ -43,8 +43,52 @@ $seccion->addText(
 $estiloTabla = ['borderColor' => '000000', 'borderSize' => 1, 'cellMargin' => 10];
 $phpWord->addTableStyle('estilo', $estiloTabla);
 
+// Agregar array con datos provisionales
+$datosPersonas = array(
+    array('Camilo Rodriguez 1', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 2', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 3', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 4', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 5', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 6', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 7', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 8', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 9', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 10', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 11', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 12', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 13', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 14', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 15', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 16', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 17', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 18', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 19', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 20', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 21', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 22', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 23', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 24', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 25', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 26', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 27', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 28', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 29', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 30', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 31', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 32', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 33', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 34', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 35', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 36', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 37', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 38', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 39', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
+    array('Camilo Rodriguez 40', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______')
+);
+
 // Crear tabla
-$tabla = $seccion->addTable('estilo');
+/* $tabla = $seccion->addTable('estilo');
 $tabla->addRow();
 $celda = $tabla->addCell();
 $celda->addText("Nombre");
@@ -59,73 +103,7 @@ $celda->addText('ObsMtuo');
 $celda =$tabla->addCell();
 $celda->addText('No.Medi');
 $celda =$tabla->addCell();
-$celda->addText('Actual');
-
-$tabla->addRow();
-$celda =$tabla->addCell();
-$celda->addText('RADIO SUPER TRANSMISORES');
-$celda =$tabla->addCell();
-$celda->addText('Kra 17A # 57N-253 EL UVO');
-$celda =$tabla->addCell();
-$celda->addText('02/05/0680/00 ');
-$celda =$tabla->addCell();
-$celda->addText('1');
-$celda =$tabla->addCell();
-$celda->addText('--');
-$celda =$tabla->addCell();
-$celda->addText('0044060-2013');
-$celda =$tabla->addCell();
-$celda->addText('---------');
-
-$tabla->addRow();
-$celda =$tabla->addCell();
-$celda->addText('DILFREDO RIOS HERRERA');
-$celda =$tabla->addCell();
-$celda->addText('Kra 17A # 57N-295 EL UVO');
-$celda =$tabla->addCell();
-$celda->addText('02/05/0700/00');
-$celda =$tabla->addCell();
-$celda->addText('1');
-$celda =$tabla->addCell();
-$celda->addText('--');
-$celda =$tabla->addCell();
-$celda->addText('0282253-2020');
-$celda =$tabla->addCell();
-$celda->addText('---------');
-
-$tabla->addRow();
-$celda =$tabla->addCell();
-$celda->addText('TOTALIZADOR LA RIOJA');
-$celda =$tabla->addCell();
-$celda->addText('Kra 17A # 57N-61 LA RIOJA');
-$celda =$tabla->addCell();
-$celda->addText('02/05/0750/00');
-$celda =$tabla->addCell();
-$celda->addText('7');
-$celda =$tabla->addCell();
-$celda->addText('--');
-$celda =$tabla->addCell();
-$celda->addText('03W-160142');
-$celda =$tabla->addCell();
-$celda->addText('---------');
-
-$tabla->addRow();
-$celda =$tabla->addCell();
-$celda->addText('TEMPORAL GONZALEZ RODRIG');
-$celda =$tabla->addCell();
-$celda->addText('EZ S. EN C. Kra 17A # 57N-61 LA RIOJA');
-$celda =$tabla->addCell();
-$celda->addText('02/05/0800/00');
-$celda =$tabla->addCell();
-$celda->addText('7');
-$celda =$tabla->addCell();
-$celda->addText('--');
-$celda =$tabla->addCell();
-$celda->addText('--0274712-2020');
-$celda =$tabla->addCell();
-$celda->addText('---------');
-
-
+$celda->addText('Actual'); */
 
 
 //Guardar el documento 
