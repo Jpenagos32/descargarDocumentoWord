@@ -1,7 +1,6 @@
 <?php
 
 use PhpOffice\PhpWord\Style\Language;
-use \PhpOffice\PhpWord\SimpleType\Jc;
 require "vendor/autoload.php";
 
 //Crear el nuevo documento
@@ -81,6 +80,12 @@ $estiloParrafo = [
     'alignment' => 'center'
 ];
 
+$estiloFila = [
+    'tblHeader' => true,
+    'cantSplit' => false,
+    'exactHeight' => true
+];
+
 // Agregar array con datos provisionales
 $datosPersonas = array(
     array('Nombre', 'Direccion', 'Codigo', 'U', 'ObsMtuo', 'No.Medi', 'Actual'),
@@ -129,7 +134,7 @@ $datosPersonas = array(
 // Obtener la informacion del arreglo
 foreach ($datosPersonas as $dato) {
     $tabla = $seccion->addTable('estilo');
-    $tabla->addRow();
+    $tabla->addRow(850, $estiloFila);
     foreach ($dato as $valor) {
         $celda = $tabla->addCell();
         $celda->addText($valor, $fuente, $estiloParrafo);
