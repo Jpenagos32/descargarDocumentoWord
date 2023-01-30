@@ -9,7 +9,7 @@ $phpWord = new \PhpOffice\PhpWord\PhpWord();
 // Agregar una seccion vacia al documento
 $seccion = $phpWord->addSection();
 
-
+###################################################################################################################################################
 
 // Configuraciones por defecto del documento
 //Añadir fuente personalizada o deseada
@@ -32,32 +32,33 @@ $margenDocumento->setMarginRight(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(1
 $margenDocumento->setMarginTop(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(1.27));
 $margenDocumento->setMarginBottom(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(1.27));
 
-// Documento de solo lectura
-// $proteccionDocumento = $phpWord->getSettings()->getDocumentProtection();
-// $proteccionDocumento->setEditing('readOnly');
+// Documento de solo lectura Comentar para desactivar el modo
+$proteccionDocumento = $phpWord->getSettings()->getDocumentProtection();
+$proteccionDocumento->setEditing('readOnly');
 
+###############################################################################################################################
 
-
-// Secciones del documento
-//Añadir los titulos del documento 
-$seccion->addText(
+//Añadir los titulos del documento como header para todas las páginas
+$header = $seccion->addHeader();
+$header->addText(
     "Acueducto y Alcantarillado de Popayán S.A. E. S.P",
     $fuente, $centrado
 );
 
-
-$seccion->addText('Empresa de Servicios Públicos',
+$header->addText('Empresa de Servicios Públicos',
     $fuente, $centrado
 );
 
-$seccion->addText('NIT 891.500.117-1',
+$header->addText('NIT 891.500.117-1',
     $fuente, $centrado
 );
 
-$seccion->addText(
+$header->addText(
     'Listado de Toma de Lecturas Mes: 2023-02 Ciclo: 4',
     ['name' => 'Arial', 'size' => 11, 'bold' => true], $centrado
 );
+
+###########################################################################################################################################
 
 // Crear estilo de tabla
 $estiloTabla = [
@@ -81,14 +82,19 @@ $estiloParrafo = [
 ];
 
 $estiloFila = [
+    'cantSplit' => false,
+    'exactHeight' => true
+];
+$estiloFilaHeader = [
     'tblHeader' => true,
     'cantSplit' => false,
     'exactHeight' => true
 ];
 
+#####################################################################################################################################################
+
 // Agregar array con datos provisionales
 $datosPersonas = array(
-    array('Nombre', 'Direccion', 'Codigo', 'U', 'ObsMtuo', 'No.Medi', 'Actual'),
     array('Camilo Rodriguez 1', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
     array('Camilo Rodriguez 2', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
     array('Camilo Rodriguez 3', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______'),
@@ -131,34 +137,37 @@ $datosPersonas = array(
     array('Camilo Rodriguez 40', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_______')
 );
 
-// Obtener la informacion del arreglo
+###################################################################################################################################################
+
+// Agregar la tabla del Header
+$tabla = $seccion->addTable('estilo');
+$tabla->addRow(854, $estiloFilaHeader);
+$celda = $tabla->addCell();
+$celda->addText("Nombre", $fuente, $estiloParrafo);
+$celda = $tabla->addCell();
+$celda->addText("Direccion", $fuente, $estiloParrafo);
+$celda =$tabla->addCell();
+$celda->addText('Codigo', $fuente, $estiloParrafo);
+$celda =$tabla->addCell();
+$celda->addText('U', $fuente, $estiloParrafo);
+$celda =$tabla->addCell();
+$celda->addText('ObsMtuo', $fuente, $estiloParrafo);
+$celda =$tabla->addCell();
+$celda->addText('No.Medi', $fuente, $estiloParrafo);
+$celda =$tabla->addCell();
+$celda->addText('Actual', $fuente, $estiloParrafo);
+
+// Obtener la informacion del arreglo para crear la tabla
 foreach ($datosPersonas as $dato) {
     $tabla = $seccion->addTable('estilo');
-    $tabla->addRow(850, $estiloFila);
+    $tabla->addRow(854, $estiloFila);
     foreach ($dato as $valor) {
         $celda = $tabla->addCell();
         $celda->addText($valor, $fuente, $estiloParrafo);
     }
 }
 
-// Crear tabla
-/* $tabla = $seccion->addTable('estilo');
-$tabla->addRow();
-$celda = $tabla->addCell();
-$celda->addText("Nombre");
-$celda = $tabla->addCell();
-$celda->addText("Direccion");
-$celda =$tabla->addCell();
-$celda->addText('Codigo');
-$celda =$tabla->addCell();
-$celda->addText('U');
-$celda =$tabla->addCell();
-$celda->addText('ObsMtuo');
-$celda =$tabla->addCell();
-$celda->addText('No.Medi');
-$celda =$tabla->addCell();
-$celda->addText('Actual'); */
-
+##############################################################################################################################################
 
 //Guardar el documento 
 $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
