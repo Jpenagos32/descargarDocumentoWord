@@ -3,8 +3,10 @@
 use PhpOffice\PhpWord\Style\Language;
 require "vendor/autoload.php";
 
+
 //Crear el nuevo documento
 $phpWord = new \PhpOffice\PhpWord\PhpWord();
+\PhpOffice\PhpWord\Settings::setDefaultPaper('Letter');
 
 // Agregar una seccion vacia al documento
 $seccion = $phpWord->addSection();
@@ -19,14 +21,14 @@ $phpWord->addFontStyle(
     [
         'name' => 'Arial',
         'size' => 11,
-        'bold' => true
+        'bold' => false
     ]
 );
 
 $fuenteCodigo = [
     'name' => 'Verdana',
     'size' => 11,
-    'bold' => true
+    'bold' => false
 ];
 
 //Centrar texto
@@ -44,8 +46,8 @@ $margenDocumento->setMarginTop(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(1.2
 $margenDocumento->setMarginBottom(\PhpOffice\PhpWord\Shared\Converter::cmToTwip(1.27));
 
 // Documento de solo lectura Comentar para desactivar el modo
-// $proteccionDocumento = $phpWord->getSettings()->getDocumentProtection();
-// $proteccionDocumento->setEditing('readOnly');
+$proteccionDocumento = $phpWord->getSettings()->getDocumentProtection();
+$proteccionDocumento->setEditing('readOnly');
 
 ###############################################################################################################################
 
@@ -76,7 +78,7 @@ $estiloTabla = [
     'borderColor' => 'ffffff',
     'borderSize' => 0,
     'position' => 'vertAnchor',
-    'cellMarginRight' => 10,
+    'cellMarginRight' => 70,
     'width' => 2000 * 2000,
     'unit' => 'pct',
     'align' => 'center',
@@ -173,7 +175,7 @@ $celda->addText('Actual', $fuente, $estiloParrafo);
 // Obtener la informacion del arreglo para crear la tabla
 foreach ($datosPersonas as $dato) {
     $tabla = $seccion->addTable('estilo');
-    $tabla->addRow(854, $estiloFila);
+    $tabla->addRow(760, $estiloFila); # Cambiar alto de las celdas
     foreach ($dato as $valor) {
         $tipoDeLetra = strpos($valor, '/') ? $fuenteCodigo : $fuente;
         $celda = $tabla->addCell();
