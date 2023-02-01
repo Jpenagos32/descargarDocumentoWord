@@ -79,6 +79,7 @@ $estiloTabla = [
     'borderSize' => 0,
     'position' => 'vertAnchor',
     'cellMarginRight' => 85,
+    'cellMarginLeft' => 60,
     // 'width' => 2000 * 2000,
     'unit' => 'pct',
     'align' => 'center',
@@ -108,46 +109,46 @@ $estiloFilaHeader = [
 
 // Agregar array con datos provisionales
 $datosPersonas = array(
-    array('Camilo Rodriguez 1', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 2', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 3', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 4', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 5', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 6', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 7', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 8', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 9', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 10', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 11', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 12', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 13', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 14', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 15', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 16', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 17', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 18', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 19', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 20', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 21', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 22', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 23', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 24', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 25', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 26', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 27', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 28', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 29', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 30', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 31', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 32', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 33', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 34', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 35', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 36', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 37', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 38', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 39', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________'),
-    array('Camilo Rodriguez 40', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '_________')
+    array('Camilo Rodriguez 1', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('RADIO SUPER TRANSMISORES', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 3', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 4', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('MARIA DEL MAR PACHECO VIDAL', 'Kra 18 # 56N-61 Casa Nro. I 7', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 6', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('ROMAN OSPINA MONTEALEGRE', 'Diag 50 N # 18-744 Casa Nro. D', '02/05/0948/00', 1, '--', '0010646-2010', '________'),
+    array('Camilo Rodriguez 8', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 9', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 10', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 11', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 12', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 13', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 14', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 15', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 16', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 17', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 18', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 19', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 20', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 21', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 22', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 23', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 24', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 25', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 26', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 27', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 28', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 29', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 30', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 31', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 32', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 33', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 34', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 35', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 36', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 37', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 38', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 39', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________'),
+    array('Camilo Rodriguez 40', 'Kra 17A # 57N-253 EL UVO', '02/05/0680/00', 1, '--', '0044060-2013', '________')
 );
 
 ###################################################################################################################################################
@@ -178,10 +179,9 @@ foreach ($datosPersonas as $dato) {
     $tabla->addRow(760, $estiloFila); # Cambiar alto de las celdas
     foreach ($dato as $valor) {
         $tipoDeLetra = strpos($valor, '/') ? $fuenteCodigo : $fuente;
-        $valorEspaciado = " " . $valor;
-        $espaciadoCodigo = strpos($valor, '/')? $valorEspaciado : $valor;
         $celda = $tabla->addCell();
-        $celda->addText($espaciadoCodigo, $tipoDeLetra, $estiloParrafo);
+        // $celda->addText($valor, $tipoDeLetra, $estiloParrafo); #Sin limitacion de caracteres
+        $celda->addText(substr($valor, 0 ,19), $tipoDeLetra, $estiloParrafo); #Con limitacion de caracteres
     }
 }
 
